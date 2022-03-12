@@ -1,0 +1,35 @@
+micronaut:
+  server:
+    port: 8080
+  application:
+    name: micronautPG
+
+datasources:
+  default:
+      url: jdbc:postgresql://localhost:5477/postgres
+      driverClassName: org.postgresql.Driver
+      username: postgres
+      password: postgres
+      dialect: POSTGRES
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
+        hbm2ddl:
+          auto: validate
+        show_sql: false
+
+flyway:
+  datasources:
+    default:
+      locations: classpath:db/migration
+
+
+
+#  liquibase:
+#    datasources:
+#      default:
+#        locations: classpath:db/changelog/db.changelog-master.xml

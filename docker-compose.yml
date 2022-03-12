@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: postgres:13.3
+    restart: always
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5477:5432"  #коннект к БД порт - 5477 в appl.properties. Для запуска всего в докере --- не нужно
+
